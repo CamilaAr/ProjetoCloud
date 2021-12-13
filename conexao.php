@@ -9,7 +9,7 @@ try {
 } catch (PDOException $pe) {
     die("Não foi possível se conectar ao banco de dados $dbname :" . $pe->getMessage());
 }
-/*
+/* copia para inserção
 $numero = 1;
 $texto = "ola";
 
@@ -18,4 +18,18 @@ $stmt= $conn->prepare($consulta);
 $stmt->execute([$numero, $texto]);
 
 */
+//copia para select
+$ACCESS_CODE = "1234567";
+$stmt = "SELECT * FROM s3Files WHERE accessCode='$ACCESS_CODE'";
+$result = $conn->query( $stmt ); 
+while($rows = $result->fetch()) {
+    $keyPath = $rows['s3FilePath'];
+   echo $rows['s3FilePath'];
+  }
+  echo $keyPath;
+
+//print_r( $rows );
+
+
+
 ?>
