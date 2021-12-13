@@ -15,7 +15,7 @@
 	//
 	// Run:$ composer require aws/aws-sdk-php
 	require './vendor/autoload.php';
-	
+	include 'conexao.php';
 	use Aws\S3\S3Client;
 	use Aws\S3\Exception\S3Exception;
 
@@ -68,7 +68,11 @@
 	} catch (Exception $e) {
 		die('Error:' . $e->getMessage());
 	}
-
+    $filePath = strval($keyName);
+    $ACCESS_CODE = "1234567";
+    $consulta = "INSERT INTO s3files (s3FilePath, accessCode) VALUES (?,?)";
+    $stmt= $conn->prepare($consulta);
+    $stmt->execute([$filePath, $ACCESS_CODE]);
 
 	echo 'Done';
 
