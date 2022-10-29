@@ -1,7 +1,7 @@
 <?php
   $BUCKET_NAME = 'projetocloud';
-  $IAM_KEY = 'AKIAVCENGDFRWZ45TRP5';
-  $IAM_SECRET = '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';
+  $IAM_KEY = '';
+  $IAM_SECRET = '5u1C5uqd3GmEVyfl/';
 
   require './vendor/autoload.php';
   use Aws\S3\S3Client;
