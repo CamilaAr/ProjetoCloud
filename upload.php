@@ -21,8 +21,8 @@
 
 	// AWS Info
 	$bucketName = 'projetocloud';
-	$IAM_KEY = 'AKIAVCENGDFRWZ45TRP5';
-	$IAM_SECRET = '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';
+	$IAM_KEY = 'AKIRP5';
+	$IAM_SECRET = '5u1C5eT';
 
 	// Connect to AWS
 	try {
